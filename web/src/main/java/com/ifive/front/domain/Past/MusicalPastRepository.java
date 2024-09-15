@@ -23,7 +23,7 @@ public interface MusicalPastRepository extends JpaRepository<MusicalPast, Intege
         + "WHERE mp.tag1 = :tag1 AND mp.tag2 = :tag2 AND mp.tag3 = :tag3 ORDER BY mp.endDate DESC")
     List<MusicalPast> queryByAllTags(Pageable pageable, String tag1, String tag2, String tag3); 
 
-    // 검색기능
+    // 검색 기능
     @Query("SELECT mp FROM MusicalPast mp "+ "WHERE mp.title LIKE %:searchKeyword%")
     List<MusicalPast> queryBySearchKeyword(Pageable pageable, @Param("searchKeyword") String searchKeyword);
 

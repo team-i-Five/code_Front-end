@@ -28,7 +28,7 @@ public class SearchController {
         this.musicalPastServiceImpl = musicalPastServiceImpl;
     }
 
-    // 검색
+    // 검색 페이지
     @GetMapping("/")
     public String search(Model model) {
         List<MusicalPastDTO> mpdl = musicalPastServiceImpl.getMusicalPastListOrderByEndDate(25);
@@ -37,7 +37,7 @@ public class SearchController {
         return "domain/Search/search";
     }
 
-    // 검색 결과
+    // 검색 결과 페이지
     @PostMapping("/result")
     public String searchResult(Model model, @RequestParam("searchKeyword") String searchKeyword) {
         // log.info("***** resultSearchKeyword={}", searchKeyword);

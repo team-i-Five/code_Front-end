@@ -18,7 +18,7 @@ public class MusicalPastServiceImpl implements MusicalPastService{
         this.musicalPastRepository = musicalPastRepository;
     }
 
-    // 검색
+    // 검색 기능
     @Override
     public List<MusicalPastDTO> getMusicalPastListBySearch(String searchKeyword){
         Pageable pageable = PageRequest.of(0,50);
